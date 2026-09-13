@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from app.routes.cases import router as cases_router
 from app.database.mongodb import check_database_connection
 from app.routes.organizations import router as organizations_router
 from app.routes.auth import router as auth_router
@@ -35,3 +35,4 @@ async def root():
 app.include_router(organizations_router)
 app.include_router(auth_router)
 app.include_router(users_router)
+app.include_router(cases_router)
